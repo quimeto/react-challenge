@@ -1,40 +1,21 @@
+@reference "tailwindcss";
+
 .todolist {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 500px;
-    margin: 20px auto;
-    padding: 0 20px;
-    box-sizing: border-box;
+    @apply flex flex-col items-center justify-center w-full max-w-[500px] my-5 mx-auto px-5 box-border bg-white p-8 rounded-2xl shadow-lg border border-gray-100;
+}
+
+.todolist h1 {
+    @apply text-2xl font-bold text-gray-800 mb-6 mt-0;
 }
 
 .todolist ul {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0 0 0;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    @apply list-none p-0 mt-5 w-full flex flex-col gap-3;
 }
 
 .todolist li {
-    background-color: #ffffff;
-    padding: 16px 20px;
-    border-radius: 8px;
-    border: 1px solid #e5e7eb;
-    font-size: 16px;
-    color: #374151;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    @apply bg-white py-4 px-5 rounded-lg border border-gray-200 text-base text-gray-700 shadow-sm flex items-center justify-between transition-all duration-200 ease-in-out;
 }
 
 .todolist li:hover {
-    border-color: #d1d5db;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.06);
+    @apply border-gray-300 shadow-md transform -translate-y-0.5;
 }
