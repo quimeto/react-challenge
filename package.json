@@ -8,7 +8,8 @@
     "build": "rm -rf dist && npm run check-typing && vite build",
     "preview": "vite preview --host",
     "check-typing": "tsc --noEmit",
-    "test": "vitest run"
+    "test": "vitest run",
+    "lint": "eslint src"
   },
   "dependencies": {
     "react": "^18.3.1",
@@ -21,9 +22,13 @@
     "@types/react": "^18.3.23",
     "@types/react-dom": "^18.3.7",
     "@vitejs/plugin-react": "^4.5.2",
+    "eslint": "^9.39.4",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.1.1",
     "jsdom": "^29.1.1",
     "sass-embedded": "^1.98.0",
     "typescript": "~5.9.3",
+    "typescript-eslint": "^8.59.4",
     "vite": "^6.3.0",
     "vitest": "^4.1.6"
   },

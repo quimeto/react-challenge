@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, SetStateAction } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 import './Counter.css';
 import { useStorageService } from '../../hooks/useStorageService';
@@ -16,18 +16,29 @@ function Counter() {
     } else {
       storageServiceRef.current.save('count', count.toString());
     }
-  }, [storageServiceRef.current])
+  }, [storageServiceRef, count])
 
-  const counterAction = (action: SetStateAction<number>) => {
-    return useCallback(() => {
-      setCount(action);
-      storageServiceRef.current?.save('count', count.toString());
-    }, [storageServiceRef])
-  }
+  const increment = useCallback(() => {
+    setCount((prev) => {
+      const next = prev + 1;
+      storageServiceRef.current?.save('count', next.toString());
+      return next;
+    });
+  }, [storageServiceRef]);
 
-  const increment = counterAction((prev) => prev + 1);
-  const decrement = counterAction((prev) => prev - 1);
-  const reset = counterAction(() => 0);
+  const decrement = useCallback(() => {
+    setCount((prev) => {
+      const next = prev - 1;
+      storageServiceRef.current?.save('count', next.toString());
+      return next;
+    });
+  }, [storageServiceRef]);
+
+  const reset = useCallback(() => {
+    const next = 0;
+    setCount(next);
+    storageServiceRef.current?.remove('count');
+  }, [storageServiceRef]);
 
   return (
     <div className="counter">

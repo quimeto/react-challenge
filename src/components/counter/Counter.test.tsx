@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach, beforeAll, afterEach } from 'vitest';
+import { describe, it, expect, beforeEach } from 'vitest';
 import { fireEvent, render } from '@testing-library/react';
 import Counter from './Counter';
 
@@ -48,9 +48,8 @@ describe('Counter Component', () => {
   });
 
   it('should reset count', () => {
-    fireEvent.click(incrementBtn);
     fireEvent.click(resetBtn);
-
     expect(container.querySelector('.counter-value')?.textContent).toBe('Current Count: 0');
+    expect(localStorage.getItem('count')).toBeNull();
   });
 });

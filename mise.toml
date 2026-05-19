@@ -25,3 +25,7 @@ run = "npm run check-typing"
 [tasks.test]
 description = "Ejecutar tests"
 run = "npm run test"
+
+[tasks.lint]
+description = "Lintear proyecto"
+run = "npm run lint"

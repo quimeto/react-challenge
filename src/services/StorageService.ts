@@ -14,7 +14,7 @@ export class LocalStorageService implements IStorageService {
     load(key: string) {
         const item = localStorage.getItem(key);
 
-        if (!!item) {
+        if (item) {
             return JSON.parse(item);
         }
 
