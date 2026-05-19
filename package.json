@@ -5,7 +5,7 @@
   "main": "src/main.tsx",
   "scripts": {
     "dev": "vite --mode localhost --host",
-    "build": "rm -rf dist && npm run check-typing && vite build",
+    "build": "rm -rf dist && pnpm run check-typing && vite build",
     "preview": "vite preview --host",
     "check-typing": "tsc --noEmit",
     "test": "vitest run",
