@@ -8,20 +8,24 @@ import ItemFilter from '../itemfilter/ItemFilter';
 function TodoList() {
 
     const [initialItems, setInitialItems] = useState<TodoItem[]>([])
-    const [filter, setFilter] = useState('');
+    const [items, setItems] = useState<TodoItem[]>([])
     const serviceRef = useTodoItemService();
 
     useEffect(() => {
         serviceRef.current?.getTodoItems()
-            .then((items) => setInitialItems(items));
+            .then((items) => {
+                setInitialItems(items);
+                setItems(items);
+            });
     }, [serviceRef]);
 
-    const items = initialItems.filter((item) => 
-        item.text.toLowerCase().includes(filter.toLowerCase())
-    );
+    function filterItems(items: TodoItem[], value: string) {
+        return items.filter((item) => item.text.toLowerCase().includes(value.toLowerCase()));
+    }
 
     function onChange(event: React.ChangeEvent<HTMLInputElement>) {
-        setFilter(event.target.value);
+        const value = event.target.value;
+        setItems(filterItems(initialItems, value));
     }
 
     return (
