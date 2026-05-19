@@ -1,0 +1,27 @@
+[tools]
+1password = "latest"
+node = "lts"
+
+[tasks.install]
+description = "Instalar dependencias del proyecto"
+run = "npm install"
+
+[tasks.dev]
+description = "Arrancar servidor de desarrollo"
+run = "npm run dev"
+
+[tasks.build]
+description = "Compilar para producción"
+run = "npm run build"
+
+[tasks.preview]
+description = "Previsualizar build de producción"
+run = "npm run preview"
+
+[tasks.check-typing]
+description = "Verificar tipos TypeScript"
+run = "npm run check-typing"
+
+[tasks.test]
+description = "Ejecutar tests"
+run = "npm run test"

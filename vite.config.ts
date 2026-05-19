@@ -1,6 +1,12 @@
-import vue from '@vitejs/plugin-vue';
+/// <reference types="vitest" />
+import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  plugins: [ vue() ],
+  plugins: [react()],
+  test: {
+    environment: 'jsdom',
+    globals: true,
+    setupFiles: './src/setupTests.ts',
+  },
 });

@@ -1,45 +1,50 @@
-# Vue Pair Programming Test
+# React Pair Programming Test
 
-This project is a simple Vue.js application designed for pair programming exercises. It includes basic components and functionality to help candidates demonstrate their skills in Vue.js development.
+This project is a simple React application designed for pair programming exercises. It includes basic components and functionality to help candidates demonstrate their skills in React development.
 
 ## Project Structure
 
 ```
-vue-pair-programming-test
+react-pair-programming-test
 ├── src
 │   ├── components
-│   │   ├── HelloWorld.vue
-│   │   └── Counter.vue
-│   ├── App.vue
-│   ├── main.js
-│   └── styles
-│       └── main.css
+│   │   ├── HelloWorld.tsx
+│   │   ├── HelloWorld.css
+│   │   ├── Counter.tsx
+│   │   └── Counter.css
+│   ├── styles
+│   │   ├── main.css
+│   │   └── app.css
+│   ├── App.tsx
+│   └── main.tsx
 ├── public
-│   └── index.html
+│   └── favicon.ico
+├── index.html
+├── tsconfig.json
+├── vite.config.ts
 ├── package.json
-├── vite.config.js
 └── README.md
 ```
 
 ## Components
 
-- **HelloWorld.vue**: A simple component that displays a greeting message.
-- **Counter.vue**: A component that implements a counter with increment and decrement functionality.
+- **HelloWorld.tsx**: A simple component that displays a greeting message using `useState`.
+- **Counter.tsx**: A component that implements a counter with increment and decrement functionality using `useState`.
 
 ## Pair Programming Exercise
 
 ### Feature 1: List + Filter
-- Add a list of 5 items to the app (in `Counter.vue` or a new `TodoList.vue`).
+- Add a list of 5 items to the app (in `Counter.tsx` or a new `TodoList.tsx`).
 - Add a text input to filter items as the user types.
-- Add a “no results” message when the filter matches nothing.
+- Add a "no results" message when the filter matches nothing.
 
 ### Feature 2: Persistence + Reset
 - Store the counter value (or list state) in `localStorage` whenever it changes.
-- On mount, initialize state from `localStorage` if available.
-- Add a “Reset” button that clears saved state and restores defaults.
+- On mount, initialize state from `localStorage` using `useEffect`.
+- Add a "Reset" button that clears saved state and restores defaults.
 
 ### Bonus
-- Extract filter input and behavior into a reusable component (e.g., `ItemFilter.vue`).
+- Extract filter input and behavior into a reusable component (e.g., `ItemFilter.tsx`).
 - Add a simple test (unit or integration) validating:
   - counter increments / decrements,
   - filter updates results correctly,
@@ -50,7 +55,7 @@ vue-pair-programming-test
 1. **Clone the repository**:
    ```
    git clone <repository-url>
-   cd vue-pair-programming-test
+   cd react-pair-programming-test
    ```
 
 2. **Install dependencies**:
@@ -63,7 +68,19 @@ vue-pair-programming-test
    npm run dev
    ```
 
-4. Open your browser and navigate to `http://localhost:3000` to see the application in action.
+4. Open your browser and navigate to `http://localhost:5173` to see the application in action.
+
+## Key React Concepts Used
+
+| Vue Concept | React Equivalent |
+|---|---|
+| `ref()` | `useState()` |
+| `onMounted()` | `useEffect(() => {}, [])` |
+| `watch()` | `useEffect(() => {}, [dep])` |
+| `<template>` | JSX `return (...)` |
+| `@click` | `onClick` |
+| `v-model` | `value` + `onChange` |
+| `scoped styles` | CSS Modules or component CSS files |
 
 ## Usage
 

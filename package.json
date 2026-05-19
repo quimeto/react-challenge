@@ -1,24 +1,31 @@
 {
-  "name": "vue-pair-programming-test",
+  "name": "react-pair-programming-challenge",
   "version": "1.0.0",
-  "description": "A simple Vue.js application for pair programming tests.",
-  "main": "src/main.js",
+  "description": "A simple React application for pair programming challenge.",
+  "main": "src/main.tsx",
   "scripts": {
     "dev": "vite --mode localhost --host",
     "build": "rm -rf dist && npm run check-typing && vite build",
     "preview": "vite preview --host",
-    "check-typing": "vue-tsc --build --noEmit"
+    "check-typing": "tsc --noEmit",
+    "test": "vitest run"
   },
   "dependencies": {
-    "vue": "^3.5.30"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^6.0.4",
-    "@vue/tsconfig": "^0.8.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/react": "^18.3.23",
+    "@types/react-dom": "^18.3.7",
+    "@vitejs/plugin-react": "^4.5.2",
+    "jsdom": "^29.1.1",
     "sass-embedded": "^1.98.0",
     "typescript": "~5.9.3",
-    "vite": "8.0.1",
-    "vue-tsc": "^3.2.5"
+    "vite": "^6.3.0",
+    "vitest": "^4.1.6"
   },
   "keywords": [],
   "author": "",
