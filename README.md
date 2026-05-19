@@ -78,7 +78,7 @@ This project uses [mise](https://mise.jdx.dev/) as a version manager and task ru
 1. **Clone the repository**:
    ```bash
    git clone <repository-url>
-   cd react-pair-programming-test
+   cd react-pp-challenge
    ```
 
 2. **Install environment and dependencies**:
